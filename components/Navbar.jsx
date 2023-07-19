@@ -4,11 +4,13 @@ import Link from "next/link"
 import Image from "next/image"
 import { useState, useEffect } from "react"
 import { signIn, signOut, useSession, getProviders} from "next-auth/react"
+import { useRouter } from "next/navigation"
 
 const Navbar = () => {
     const {data: session } = useSession()
     const [providers, setProviders] = useState(null)
     const [toggleDropDown, setToggleDropDown] = useState(false)
+    const router = useRouter()
 
     useEffect(() => {
         const setUpProviders = async () => {
@@ -19,17 +21,21 @@ const Navbar = () => {
         setUpProviders()
     }, [])
 
+    useEffect(() => {
+		if (!session) router.push('/');
+	}, [session]);
+
     return (
-        <nav className="flex-between w-full mb-16 pt-3">
+        <nav className="sticky top-0 flex-between w-full mb-16 py-2 px-4">
             <Link href="/" className="flex gap-2 flex-center">
                 <Image 
-                    src="/assets/images/logo.svg"
+                    src="/assets/images/innovation.png"
                     alt="AI Prompt Logo"
                     width={40}
                     height={40}
                     className="object-contain"
                 />
-                <p className="logo_text">Ai Prompts</p>
+                <p className="logo_text">AI Prompts</p>
             </Link>
             
             {/* Desktop navigation */}

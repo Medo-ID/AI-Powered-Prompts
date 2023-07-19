@@ -9,6 +9,7 @@ const UserProfile = ({params}) => {
   const searchParams = useSearchParams()
   const userName = searchParams.get("name")
   console.log(params?.id)
+  console.log(params.creator?.username)
 
   const [userPosts, setUserPosts] = useState([])
 

@@ -1,6 +1,11 @@
-* Implement Search
-    - Search by prompt
-    - Search by tag
-    - Search by username
-* Implement Click on tag
-* Implement Vieew other profiles
+* Implement Search ---------------- done
+    - Search by prompt ------------ done
+    - Search by tag --------------- done
+    - Search by username ---------- done
+* Implement Click on tag ---------- done
+* Implement View other profiles --- 
+
+* favicon ------------------------- done 
+* background-colors --------------- 
+* button style -------------------- 
+
