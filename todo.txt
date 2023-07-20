@@ -3,9 +3,9 @@
     - Search by tag --------------- done
     - Search by username ---------- done
 * Implement Click on tag ---------- done
-* Implement View other profiles --- 
+* Implement View other profiles --- done
 
 * favicon ------------------------- done 
-* background-colors --------------- 
-* button style -------------------- 
+* background-colors --------------- done
+* button style -------------------- done
 

@@ -66,7 +66,7 @@ const Feed = () => {
   useEffect(() => {
     fetchPosts();
   }, []);
-
+  
   return (
     <section className='feed'>
       
@@ -81,10 +81,9 @@ const Feed = () => {
       </form>
 
       <PromptCardList 
-        data={searchText.length > 0 ? searchResults :  posts}
+        data={searchText.length > 0 ? searchResults : posts}
         handleTagClick={handleTagClick}
       />
-
     </section>
   )
 }

@@ -19,7 +19,7 @@
 }
 
 .main:before {
-  background: radial-gradient(circle, rgba(174, 111, 62, 0.3) 0%, #858585 100%);
+  background: radial-gradient(circle, rgba(221, 141, 80, 0.3) 0%, #5d5d5d 100%);
   position: absolute;
   content: "";
   z-index: 2;
@@ -90,11 +90,11 @@
 }
 
 .orange_gradient {
-  @apply bg-gradient-to-r from-amber-300 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-amber-600 via-orange-600 to-yellow-400 bg-clip-text text-transparent;
 }
 
 .green_gradient {
-  @apply bg-gradient-to-r from-green-300 to-green-600 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-emerald-400 via-green-400 to-green-500 bg-clip-text text-transparent;
 }
 
 .blue_gradient {
@@ -150,7 +150,7 @@
 
 /* PromptCard Component */
 .prompt_card {
-  @apply flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-fit;
+  @apply flex-1 break-inside-avoid rounded-lg border border-white bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-fit shadow-md;
 }
 
 .flex-center {

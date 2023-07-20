@@ -1,23 +1,18 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { useSearchParams } from "next/navigation"
 
 import Profile from "@components/Profile"
 
 const UserProfile = ({params}) => {
-  const searchParams = useSearchParams()
-  const userName = searchParams.get("name")
-  console.log(params?.id)
-  console.log(params.creator?.username)
 
   const [userPosts, setUserPosts] = useState([])
+  const [userInfos, setUserInfos] = useState([])
 
   useEffect(() => {
     const fetchUserPosts = async () => {
       const response = await fetch(`/api/users/${params?.id}/posts`);
       const data = await response.json();
-
       setUserPosts(data);
 
     };
@@ -25,10 +20,23 @@ const UserProfile = ({params}) => {
     if(params?.id) fetchUserPosts();
   
   }, [params.id]);
+
+  useEffect(() => {
+    const fetchUserInfos = async () => {
+      const response = await fetch(`/api/users/${params?.id}`);
+      const data = await response.json();
+      setUserInfos(data);
+    };
+    
+    if(params?.id) fetchUserInfos();
   
+  }, [params.id])
+  
+  const userName = userInfos[0]?.username
+
   return (
     <Profile 
-      name={userName}
+      name={`${userName}'s`}
       desc={`Welcome to ${userName}'s personalized profile page. You can explore and use ${userName}'s extraordinary prompts, or be inspired by the power of their imagination`}
       data={userPosts}
     />
